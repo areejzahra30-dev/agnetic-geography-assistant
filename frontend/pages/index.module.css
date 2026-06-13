@@ -1,0 +1,350 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* === Header === */
+.header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-lg) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.headerContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.headerTitle {
+  flex: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  white-space: nowrap;
+}
+
+.userInfo {
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+.authButton {
+  padding: var(--space-md) var(--space-lg);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+/* === Main Content === */
+.main {
+  flex: 1;
+  padding: var(--space-xxl) 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* === Search Section === */
+.searchSection {
+  margin-bottom: var(--space-xxl);
+  padding: var(--space-xxl);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* === Error Banner === */
+.errorBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  color: #991b1b;
+  font-weight: 500;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: #991b1b;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.closeBtn:hover {
+  opacity: 0.7;
+}
+
+.closeBtn:focus-visible {
+  outline: 2px solid #991b1b;
+  outline-offset: 2px;
+}
+
+.resultsSection {
+  margin-top: var(--space-xxl);
+}
+
+.messagesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: var(--space-md);
+}
+
+.messageItem {
+  animation: slideIn 300ms ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typeText {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.textContent {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.textContent p {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.typeImage {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 600px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.typeError {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  color: #991b1b;
+}
+
+.errorMessage {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.loadingIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-light);
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-secondary);
+  border-radius: 50%;
+  animation: spin 600ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Empty State === */
+.emptyState {
+  text-align: center;
+  padding: var(--space-xxl);
+  background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-xxl);
+}
+
+.emptyContent h2 {
+  font-size: 28px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.emptyContent p {
+  font-size: 16px;
+  color: var(--color-text-light);
+  margin: 0 0 var(--space-lg) 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.examples {
+  font-size: 14px;
+  color: var(--color-secondary);
+  font-weight: 500;
+  margin-top: var(--space-lg);
+}
+
+/* === Footer === */
+.footer {
+  margin-top: auto;
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: var(--color-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footer a:hover {
+  color: #7c3aed;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .headerContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+  }
+
+  .headerActions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .authButton {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .searchSection {
+    padding: var(--space-lg);
+  }
+
+  .emptyContent h2 {
+    font-size: 22px;
+  }
+
+  .examples {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: var(--space-lg) 0;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .messagesList {
+    gap: var(--space-md);
+  }
+
+  .messageItem {
+    padding: var(--space-md);
+  }
+}
