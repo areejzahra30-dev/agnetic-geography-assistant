@@ -11,12 +11,12 @@ DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+psycopg2://user:password@lo
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key-change-in-production")
 
 # LLM
-GROK_API_KEY = os.getenv("GROK_API_KEY", "ai-6AvosFVTxaNy3lGGK1XNvg3l0S1SDarDBcnVrqN3wgfE2K1j92MQt5VeP0oUI07kqApPw5TCK7cbWUsn")
+GROK_API_KEY = os.getenv("GROK_API_KEY", "")
 GROK_MODEL = "xai/grok-3-fast"
 
 # MCP / external
-MCP_APIFY_HEADER = os.getenv("MCP_APIFY_HEADER", "apify_api_4JPLA0xgdS0r1lFdyokHeYfqcr0nKB1wM3Gg")
-PEXELS_API_KEY = os.getenv("PEXELS_API_KEY", "ppRkFe888H03Peud8xmotuGkcPFbXzX0sP13HZ6sX0B33RAwCnIcOqBd")
+MCP_APIFY_HEADER = os.getenv("MCP_APIFY_HEADER", "")
+PEXELS_API_KEY = os.getenv("PEXELS_API_KEY", "")
 
 # CORS
 ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,https://app.domain.com,https://api.domain.com").split(",")
